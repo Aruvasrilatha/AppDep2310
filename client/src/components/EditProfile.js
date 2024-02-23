@@ -24,7 +24,7 @@ function EditProfile() {
     ageInputRef.current.value = storeObj.loginReducer.userDetails.age;
     emailInputRef.current.value = storeObj.loginReducer.userDetails.email;
     mobileNoInputRef.current.value = storeObj.loginReducer.userDetails.mobileNo;
-    let profilePicPath = `http://localhost:4567/${storeObj.loginReducer.userDetails.profilePic}`;
+    let profilePicPath = `/${storeObj.loginReducer.userDetails.profilePic}`;
     setProfilePicPath(profilePicPath);
   }, []);
 
@@ -47,7 +47,7 @@ function EditProfile() {
     };
 
     let JSONData = await fetch(
-      "http://localhost:4567/updateProfile",
+      "/updateProfile",
       reqOptions
     );
 
